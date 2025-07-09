@@ -8,12 +8,30 @@ function createWindow(): void {
   const mainWindow = new BrowserWindow({
     width: 900,
     height: 670,
+    minWidth: 750,
+    maxHeight: 550,
     show: false,
+    frame: false,
+    transparent: true,
+    titleBarStyle: 'hidden',
+    enableLargerThanScreen: true,
+    movable: true,
+    fullscreenable: false,
+    hasShadow: false,
+    opacity: 1.0,
+    focusable: true,
+    skipTaskbar: true,
+    type: 'panel',
+    paintWhenInitiallyHidden: true,
+    backgroundColor: '#00000000',
     autoHideMenuBar: true,
     ...(process.platform === 'linux' ? { icon } : {}),
     webPreferences: {
       preload: join(__dirname, '../preload/index.js'),
-      sandbox: false
+      sandbox: false,
+      nodeIntegration: false,
+      contextIsolation: true,
+      scrollBounce: true
     }
   })
 
