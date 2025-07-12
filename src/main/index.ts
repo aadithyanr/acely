@@ -4,7 +4,7 @@ import { is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
 import fs from 'fs'
 import { initializeIpcHandler } from './lib/ipc-handler'
-import { KeyboardShortcutHelper } from './lib/keyboard-shortcut'
+import { KeyboardShortcutHelper } from './lib/keyboard-shortcuts'
 import { ScreenshotManager } from './lib/screenshot-manager'
 import { ProcessingManager } from './lib/processing-manager'
 import { configManager } from './lib/config-manager'
@@ -110,8 +110,8 @@ async function createWindow(): Promise<void> {
   }
 
   state.mainWindow.webContents.setZoomFactor(1)
-  //TODO: Comment this out when not in development
-  // state.mainWindow.webContents.openDevTools()
+  //comment this out when not in development
+  state.mainWindow.webContents.openDevTools()
   state.mainWindow.webContents.setWindowOpenHandler((details) => {
     shell.openExternal(details.url)
     return { action: 'deny' }
