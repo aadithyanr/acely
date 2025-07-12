@@ -1,8 +1,20 @@
-import { contextBridge } from 'electron'
+import { contextBridge, ipcRenderer } from 'electron'
 import { electronAPI } from '@electron-toolkit/preload'
 
+interface Config {
+  apiKey?: string
+  apiProvider?: 'openai' | 'gemini'
+  extractionModel?: string
+  solutionModel?: string
+  debuggingModel?: string
+}
+
 // Custom APIs for renderer
-const api = {}
+const api = {
+  updateConfig: (config: Config) => ipcRenderer.invoke('updateConfig', config),
+  getConfig: () => ipcRenderer.invoke('getConfig'),
+  openExternal: (url: string) => ipcRenderer.invoke('openExternal', url)
+}
 
 // Use `contextBridge` APIs to expose Electron APIs to
 // renderer only if context isolation is enabled, otherwise

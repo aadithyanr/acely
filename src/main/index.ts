@@ -67,8 +67,48 @@ app.whenReady().then(() => {
     optimizer.watchWindowShortcuts(window)
   })
 
-  // IPC test
+  // IPC handlers
   ipcMain.on('ping', () => console.log('pong'))
+
+  // Config management
+  ipcMain.handle('updateConfig', async (_, config) => {
+    try {
+      // For now, we'll just return success
+      // In a real app, you'd save this to a file or database
+      console.log('Updating config:', config)
+      return true
+    } catch (error) {
+      console.error('Failed to update config:', error)
+      throw error
+    }
+  })
+
+  ipcMain.handle('getConfig', async () => {
+    try {
+      // For now, return default config
+      // In a real app, you'd load this from a file or database
+      return {
+        apiKey: '',
+        apiProvider: 'openai',
+        extractionModel: 'gpt-4o',
+        solutionModel: 'gpt-4o',
+        debuggingModel: 'gpt-4o'
+      }
+    } catch (error) {
+      console.error('Failed to get config:', error)
+      throw error
+    }
+  })
+
+  ipcMain.handle('openExternal', async (_, url) => {
+    try {
+      await shell.openExternal(url)
+      return true
+    } catch (error) {
+      console.error('Failed to open external link:', error)
+      throw error
+    }
+  })
 
   createWindow()
 
