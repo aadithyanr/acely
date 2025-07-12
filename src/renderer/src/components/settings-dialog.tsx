@@ -168,7 +168,7 @@ export function SettingsDialog({ open: openProp, onOpenChange }: SettingsDialogP
   const handleSave = async () => {
     setIsLoading(true)
     try {
-      const result = await window.api.updateConfig({
+      const result = await window.electronAPI.updateConfig({
         apiKey,
         apiProvider,
         extractionModel,
@@ -193,7 +193,7 @@ export function SettingsDialog({ open: openProp, onOpenChange }: SettingsDialogP
   }
 
   const openExternalLink = (url: string) => {
-    window.api.openExternal(url)
+    window.electronAPI.openLink(url)
   }
 
   useEffect(() => {
@@ -207,7 +207,8 @@ export function SettingsDialog({ open: openProp, onOpenChange }: SettingsDialogP
         debuggingModel?: string
       }
 
-      window.api.getConfig()
+      window.electronAPI
+        .getConfig()
         .then((config: Config) => {
           setApiKey(config.apiKey || '')
           setApiProvider(config.apiProvider || 'openai')

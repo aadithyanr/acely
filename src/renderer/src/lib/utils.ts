@@ -5,12 +5,12 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-// const getPlatform = () => {
-//   try {
-//     return window.electronAPI.getPlatform() || 'darwin'
-//   } catch {
-//     return 'darwin'
-//   }
-// }
+const getPlatform = () => {
+  try {
+    return window.electronAPI.getPlatform() || 'darwin'
+  } catch {
+    return 'darwin'
+  }
+}
 
-// export const COMMAND_KEY = getPlatform() === 'darwin' ? '⌘' : 'ctrl'
+export const COMMAND_KEY = getPlatform() === 'darwin' ? '⌘' : 'ctrl'

@@ -1,4 +1,4 @@
-appId: com.electron.app
+appId: com.aadithyan.silentcoder
 productName: silent-coder
 directories:
   buildResources: build
@@ -20,14 +20,21 @@ nsis:
   createDesktopShortcut: always
 mac:
   entitlementsInherit: build/entitlements.mac.plist
-  extendInfo:
-    - NSCameraUsageDescription: Application requests access to the device's camera.
-    - NSMicrophoneUsageDescription: Application requests access to the device's microphone.
-    - NSDocumentsFolderUsageDescription: Application requests access to the user's Documents folder.
-    - NSDownloadsFolderUsageDescription: Application requests access to the user's Downloads folder.
-  notarize: false
+  entitlements: build/entitlements.mac.plist
+  hardenedRuntime: true
+  category: public.app-category.productivity
+  darkModeSupport: true
+  target:
+    - dmg
+    - zip
 dmg:
   artifactName: ${name}-${version}.${ext}
+  sign: true
+mas:
+  entitlements: build/entitlements.mas.plist
+  entitlementsInherit: build/entitlements.mas.inherit.plist
+  provisioningProfile: build/embedded.provisionprofile
+  hardenedRuntime: false
 linux:
   target:
     - AppImage
@@ -39,5 +46,7 @@ appImage:
   artifactName: ${name}-${version}.${ext}
 npmRebuild: false
 publish:
-  provider: generic
-  url: https://example.com/auto-updates
+  provider: github
+  owner: aadithyan
+  repo: silent-coder
+  releaseType: release
