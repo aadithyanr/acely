@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism'
+import { prism } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 export const SolutionSection = ({
   title,
@@ -46,7 +46,7 @@ export const SolutionSection = ({
           </button>
           <SyntaxHighlighter
             language={currentLanguage === 'golang' ? 'go' : currentLanguage}
-            style={dracula}
+            style={prism}
             showLineNumbers
             customStyle={{
               maxWidth: '100%',
@@ -54,7 +54,7 @@ export const SolutionSection = ({
               padding: '1rem',
               whiteSpace: 'pre-wrap',
               wordBreak: 'break-all',
-              backgroundColor: 'rgba(22, 27, 34, 0.5)'
+              backgroundColor: 'rgba(255,255,255,0.7)'
             }}
             wrapLongLines={true}
           >

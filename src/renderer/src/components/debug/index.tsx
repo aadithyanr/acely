@@ -217,7 +217,7 @@ const Debug: React.FC<DebugProps> = ({
           setLanguage={setLanguage}
         />
 
-        <div className="w-full text-sm text-black bg-black/50 rounded-md">
+        <div className="w-full text-sm text-black bg-white/50 rounded-md">
           <div className="overflow-hidden rounded-lg">
             <div className="px-4 py-3 space-y-4">
               <ContentSection
@@ -247,7 +247,7 @@ const Debug: React.FC<DebugProps> = ({
               />
 
               <div className="space-y-2">
-                <h2 className="text-[13px] font-medium text-white tracking-wide">
+                <h2 className="text-[13px] font-medium text-black tracking-wide">
                   Analysis & Improvements
                 </h2>
                 {!debugAnalysis ? (
@@ -259,7 +259,7 @@ const Debug: React.FC<DebugProps> = ({
                     </div>
                   </div>
                 ) : (
-                  <div className="w-full bg-black/30 rounded-md p-4 text-[13px] leading-[1.4] text-gray-100 whitespace-pre-wrap overflow-auto max-h-[600px]">
+                  <div className="w-full bg-white/30 rounded-md p-4 text-[13px] leading-[1.4] text-gray-800 whitespace-pre-wrap overflow-auto max-h-[600px]">
                     {(() => {
                       const sections: { title: string; content: string[] }[] = []
                       const mainSections = debugAnalysis.split(
@@ -292,7 +292,7 @@ const Debug: React.FC<DebugProps> = ({
                       return sections.map((section, sectionIndex) => (
                         <div key={sectionIndex} className="mb-6">
                           {section.title && (
-                            <div className="font-bold text-white/90 text-[14px] mb-2 pb-1 border-b border-white/10">
+                            <div className="font-bold text-black/90 text-[14px] mb-2 pb-1 border-b border-black/10">
                               {section.title}
                             </div>
                           )}
@@ -319,7 +319,7 @@ const Debug: React.FC<DebugProps> = ({
                                     return (
                                       <div
                                         key={lineIndex}
-                                        className="font-mono text-xs bg-black/50 p-3 my-2 rounded overflow-x-auto"
+                                        className="font-mono text-xs bg-white/50 p-3 my-2 rounded overflow-x-auto"
                                       >
                                         {codeContent}
                                       </div>
@@ -351,7 +351,7 @@ const Debug: React.FC<DebugProps> = ({
                                         return (
                                           <span
                                             key={partIndex}
-                                            className="font-mono bg-black/30 px-1 py-0.5 rounded"
+                                            className="font-mono bg-white/30 px-1 py-0.5 rounded"
                                           >
                                             {part.slice(1, -1)}
                                           </span>
@@ -371,7 +371,7 @@ const Debug: React.FC<DebugProps> = ({
                                 return (
                                   <div
                                     key={lineIndex}
-                                    className="font-semibold text-white/80 mt-3 mb-1"
+                                    className="font-semibold text-black/80 mt-3 mb-1"
                                   >
                                     {line.replace(/^#+\s+/, '')}
                                   </div>

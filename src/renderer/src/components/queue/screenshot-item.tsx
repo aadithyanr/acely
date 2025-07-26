@@ -29,7 +29,7 @@ const ScreenshotItem: React.FC<ScreenshotItemProps> = ({
       >
         <div className="w-full h-full relative">
           {isLoading && (
-            <div className="absolute inset-0 bg-black bg-opacity-50 z-10 flex items-center justify-center">
+            <div className="absolute inset-0 bg-white bg-opacity-50 z-10 flex items-center justify-center">
               <div className="w-6 h-6 border-2 border-white border-t-transparent rounded-full animate-spin" />
             </div>
           )}
@@ -44,7 +44,7 @@ const ScreenshotItem: React.FC<ScreenshotItemProps> = ({
           />
           {!isLoading && (
             <button
-              className="absolute top-2 left-2 p-1 rounded-full bg-black bg-opacity-50 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              className="absolute top-2 left-2 p-1 rounded-full bg-white bg-opacity-50 text-black opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               onClick={(e) => {
                 e.stopPropagation()
                 handleDelete()

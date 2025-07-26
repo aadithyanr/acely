@@ -40,7 +40,7 @@ export const QueueCommands: React.FC<QueueCommandsProps> = ({
   return (
     <div>
       <div className="pt-2 w-fit">
-        <div className="text-xs text-white/90 backdrop-blur-md bg-black/10 rounded-lg py-2 px-4 flex items-center justify-center gap-4">
+        <div className="text-xs text-black/90 backdrop-blur-md bg-white/10 rounded-lg py-2 px-4 flex items-center justify-center gap-4">
           <div
             className="flex items-center gap-2 cursor-pointer rounded px-2 py-1.5 hover:bg-white/10 transition-colors"
             onClick={async () => {
@@ -56,7 +56,7 @@ export const QueueCommands: React.FC<QueueCommandsProps> = ({
               }
             }}
           >
-            <span className="text-[11px] leading-none truncate">
+            <span className="text-[11px] font-medium leading-none truncate">
               {screenshotCount === 0
                 ? 'Take first screenshot'
                 : screenshotCount === 1
@@ -141,7 +141,7 @@ export const QueueCommands: React.FC<QueueCommandsProps> = ({
                 }}
               >
                 <div className="absolute -top-2 right-0 w-full h-2" />
-                <div className="p-3 text-xs bg-black/80 backdrop-blur-md rounded-lg border border-white/10 text-white/90 shadow-lg">
+                <div className="p-3 text-xs bg-white/80 backdrop-blur-md rounded-lg border border-black/10 text-black/90 shadow-lg">
                   <div className="space-y-4">
                     <h3 className="font-medium truncate">Keyboard Shortcuts</h3>
                     <div className="space-y-3">
