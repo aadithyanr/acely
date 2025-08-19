@@ -1,34 +1,56 @@
-# silent-coder
+# acely
 
-An Electron application with React and TypeScript
+> ai that watches your screen, then feeds you answers in real time
 
-## Recommended IDE Setup
+basically a cluely clone i built for fun. it sees what's on your screen, hears your audio, and gives you the perfect response when you need it.
 
-- [VSCode](https://code.visualstudio.com/) + [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) + [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+## what it does
 
-## Project Setup
+- watches your screen 👀
+- listens to audio 🎧  
+- feeds you answers instantly ⚡
+- works silently in background 🤫
+- runs on windows/mac/linux 💻
 
-### Install
+## tech stack
 
-```bash
-$ pnpm install
-```
+electron + react + typescript because why not
 
-### Development
-
-```bash
-$ pnpm dev
-```
-
-### Build
+## setup
 
 ```bash
-# For windows
-$ pnpm build:win
-
-# For macOS
-$ pnpm build:mac
-
-# For Linux
-$ pnpm build:linux
+pnpm install
+pnpm dev
 ```
+
+## build it
+
+```bash
+# windows
+pnpm build:win
+
+# mac  
+pnpm build:mac
+
+# linux
+pnpm build:linux
+```
+
+## how to use
+
+1. run the app
+2. join a call/meeting/whatever
+3. acely does its thing
+4. profit ???
+
+## disclaimer
+
+built this as a hobby project to see if i could. use responsibly or whatever. don't get kicked out of school.
+
+## contributing
+
+it's open source, do what you want with it. prs welcome if you make it better.
+
+---
+
+*might as well star it if you're here* ✨
